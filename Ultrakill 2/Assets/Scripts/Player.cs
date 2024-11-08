@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     public float speed;
     public float jumpForce;
+    public float dashForce;
     public bool isJumping = false;
     void Start()
     {
@@ -44,6 +45,11 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Walk", false);
             Debug.Log("soltou");
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rb.AddForce(new Vector2(dashForce, 0f), ForceMode2D.Force);
         }
     }
 
