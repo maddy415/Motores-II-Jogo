@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.512947
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 758989780}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,6 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  jumpForce: 6
+  dashForce: 2
+  isJumping: 0
 --- !u!1 &1207218132
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,9 +423,9 @@ GameObject:
   - component: {fileID: 1207218135}
   - component: {fileID: 1207218134}
   - component: {fileID: 1207218133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chao
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
