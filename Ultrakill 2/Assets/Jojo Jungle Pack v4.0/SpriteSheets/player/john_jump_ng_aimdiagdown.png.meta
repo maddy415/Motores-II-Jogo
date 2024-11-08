@@ -137,176 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa0000eedb5545646aacc2457a5a7f93
-      internalID: -1193554666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 0
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5213b03bb354cce48ba088ed8bfeb31c
-      internalID: -771561830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_2
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 0
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6dcaee36a5ea33844825842a5b045349
-      internalID: -1577999931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_3
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 1
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95d32b965d5e78e408489feb6099d217
-      internalID: 1022510550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_4
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 3
-        width: 17
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9e81d5d03a4dd546a6eaec88c926af9
-      internalID: -1870198838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_5
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 4
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e24adc8cf0f562f4f878f261947b0228
-      internalID: 1770802251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_6
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 4
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 001c3b337fa9dd345a239868dfcfb639
-      internalID: -1519126229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_7
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 2
-        width: 17
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fd9acd91f67d0547ab03105ac6f6b39
-      internalID: -110460417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_jump_ng_aimdiagdown_8
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 1
-        width: 17
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dc63cf4c2e78ff489d176b79f740a5f
-      internalID: 1759041758
+      spriteID: f8c101fa2d12d4900800000000000000
+      internalID: 670229108311989391
       vertices: []
       indices: 
       edges: []
@@ -314,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -322,15 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      john_jump_ng_aimdiagdown_0: -1193554666
-      john_jump_ng_aimdiagdown_1: -771561830
-      john_jump_ng_aimdiagdown_2: -1577999931
-      john_jump_ng_aimdiagdown_3: 1022510550
-      john_jump_ng_aimdiagdown_4: -1870198838
-      john_jump_ng_aimdiagdown_5: 1770802251
-      john_jump_ng_aimdiagdown_6: -1519126229
-      john_jump_ng_aimdiagdown_7: -110460417
-      john_jump_ng_aimdiagdown_8: 1759041758
+      john_jump_ng_aimdiagdown_0: 670229108311989391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
