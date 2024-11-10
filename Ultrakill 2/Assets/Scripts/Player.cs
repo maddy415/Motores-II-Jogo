@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float jumpForce;
     public float dashForce;
     public bool isJumping = false;
+    private string direcao;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
             transform.position += Vector3.left * speed * Time.deltaTime;
             anim.SetBool("Walk", true);
             transform.eulerAngles = new Vector3(0, 180, 0);
+            direcao = "esq";
 
         }
         if (Input.GetKey(KeyCode.D))
@@ -39,17 +41,26 @@ public class Player : MonoBehaviour
             transform.position += Vector3.right * speed * Time.deltaTime;
             anim.SetBool("Walk", true);
             transform.eulerAngles = new Vector3(0, 0, 0);
+            direcao = "dir";
         }
         
         if((Input.GetKeyUp(KeyCode.A)) || (Input.GetKeyUp(KeyCode.D)))
         {
             anim.SetBool("Walk", false);
-            Debug.Log("soltou");
+            Vector2 velocity = rb.velocity;
+            rb.velocity = Vector2.SmoothDamp(new Vector2(rb.velocity.x, rb.velocity.y), Vector2.zero, ref velocity, 1f, Time.deltaTime);
         }
-
-        if (Input.GetKey(KeyCode.LeftShift))
+        //Dash
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            rb.AddForce(new Vector2(dashForce, 0f), ForceMode2D.Force);
+            if (direcao == "esq")
+            {
+                rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
+            }
+            else if (direcao == "dir")
+            {
+                rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+            }
         }
     }
 
