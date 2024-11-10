@@ -1,21 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private Transform tra;
+    public GameObject Bullet;
+    
     public float speed;
     public float jumpForce;
     public float dashForce;
     public bool isJumping = false;
     private string direcao;
+    
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        tra = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,8 @@ public class Player : MonoBehaviour
     {
         Move();
         Jump();
+        Shoot();
+        //OnMouseDown();
     }
 
     void Move()
@@ -75,12 +83,20 @@ public class Player : MonoBehaviour
         }
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
             isJumping = false;
             anim.SetBool("Jump", false);
+        }
+    }
+
+    void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(Bullet, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
         }
     }
 }
