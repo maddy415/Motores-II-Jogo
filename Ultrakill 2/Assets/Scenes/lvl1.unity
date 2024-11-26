@@ -412,6 +412,9 @@ MonoBehaviour:
   speed: 3.5
   jumpForce: 6
   dashForce: 3
+  dashCooldown: 1.5
+  timer: 0
+  canDash: 0
   isJumping: 0
 --- !u!1 &1207218132
 GameObject:

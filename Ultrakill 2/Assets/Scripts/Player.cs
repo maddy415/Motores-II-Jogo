@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float dashForce;
+    public float dashCooldown;
+    public float timer;
+    public bool canDash;
     public bool isJumping = false;
     private string direcao;
     
@@ -30,7 +33,6 @@ public class Player : MonoBehaviour
         Move();
         Jump();
         Shoot();
-        //OnMouseDown();
     }
 
     void Move()
@@ -59,15 +61,26 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.SmoothDamp(new Vector2(rb.velocity.x, rb.velocity.y), Vector2.zero, ref velocity, 1f, Time.deltaTime);
         }
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (!canDash)
+        {
+            timer += Time.deltaTime;
+            if (timer > dashCooldown)
+            {
+                canDash = true;
+                timer = 0;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             if (direcao == "esq")
             {
                 rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
+                canDash = false;
             }
             else if (direcao == "dir")
             {
                 rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+                canDash = false;
             }
         }
     }
