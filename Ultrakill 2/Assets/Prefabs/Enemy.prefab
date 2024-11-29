@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1047082580270092228}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Grunt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19, y: 0.18}
+  m_Size: {x: 0.11, y: 0.18}
   m_EdgeRadius: 0
 --- !u!50 &6388370786989228356
 Rigidbody2D:
@@ -193,5 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbaab96b69ce652489320e0ce1a42c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8936764562970838579, guid: 7894e34b8573416429a80182e3995a9d, type: 3}
+  playerTransform: {fileID: 0}
   walkSpeed: 3
