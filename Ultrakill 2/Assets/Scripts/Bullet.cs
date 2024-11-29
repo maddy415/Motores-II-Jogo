@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +26,15 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grunt"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            Debug.Log("colidiu com" + collision.gameObject.name);
+        }
     }
 }

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private Transform tra;
     public GameObject Bullet;
+    public GameObject Enemy;
     
     public float speed;
     public float jumpForce;
@@ -103,6 +104,7 @@ public class Player : MonoBehaviour
             isJumping = false;
             anim.SetBool("Jump", false);
         }
+        
     }
 
     void Shoot()
@@ -112,4 +114,7 @@ public class Player : MonoBehaviour
             Instantiate(Bullet, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
         }
     }
+
+    
+    
 }
