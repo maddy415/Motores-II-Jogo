@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
     private Transform tra;
+    private SpriteRenderer sr;
     public GameObject Bullet;
     public GameObject Enemy;
+    public GameObject GameOver;
     
     public float speed;
     public float jumpForce;
@@ -21,11 +24,13 @@ public class Player : MonoBehaviour
     public bool isJumping = false;
     private string direcao;
     
+    
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         tra = GetComponent<Transform>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -45,7 +50,7 @@ public class Player : MonoBehaviour
             anim.SetBool("Walk", true);
             transform.eulerAngles = new Vector3(0, 180, 0);
             direcao = "esq";
-
+            
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -99,12 +104,18 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
             anim.SetBool("Jump", false);
         }
-        
+
+        if (collision.gameObject.tag == "Grunt")
+        {
+            sr.enabled = false;
+            GameOver.SetActive(true);
+            Enemy.SetActive(false);
+        }
     }
 
     void Shoot()
