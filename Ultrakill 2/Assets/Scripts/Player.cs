@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     public bool canDash;
     public bool isJumping = false;
     private string direcao;
+    public bool canFire = true;
+    public float fireTimer;
+    public float fireCooldown;
     
     
     void Start()
@@ -120,9 +123,22 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!canFire)
+        {
+            fireTimer += Time.deltaTime;
+            if (fireTimer > fireCooldown)
+            {
+                canFire = true;
+                fireTimer = 0;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
             Instantiate(Bullet, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            canFire = false;
+            
+            
         }
     }
 

@@ -38,8 +38,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
-            ScoreCounter.score += 10;
-            Debug.Log("colidiu");
+            Score.scoreCount += 5;
         }
     }
 }
