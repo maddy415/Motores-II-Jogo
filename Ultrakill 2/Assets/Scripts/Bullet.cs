@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class Bullet : MonoBehaviour
 {
     private Camera mainCam;
     private Rigidbody2D rb;
+    
 
     private Vector3 mousePos;
 
@@ -20,6 +22,8 @@ public class Bullet : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * bulletForce;
+        
+        
     }
 
     // Update is called once per frame
@@ -34,7 +38,8 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
-            Debug.Log("colidiu com" + collision.gameObject.name);
+            ScoreCounter.score += 10;
+            Debug.Log("colidiu");
         }
     }
 }

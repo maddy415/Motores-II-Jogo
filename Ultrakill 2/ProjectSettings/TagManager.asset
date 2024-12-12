@@ -8,6 +8,7 @@ TagManager:
   - Grunt
   - Enemy
   - Bullet
+  - UIController
   layers:
   - Default
   - TransparentFX

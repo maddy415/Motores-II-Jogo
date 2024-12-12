@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
         {
             sr.enabled = false;
             GameOver.SetActive(true);
-            Enemy.SetActive(false);
+            //Enemy.SetActive(false);
         }
     }
 
