@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public GameObject Enemy;
     public GameObject GameOver;
     
+    
     public float speed;
     public float jumpForce;
     public float dashForce;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     public bool canFire = true;
     public float fireTimer;
     public float fireCooldown;
+    public static bool vivo = true;
     
     
     void Start()
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tra = GetComponent<Transform>();
         sr = GetComponent<SpriteRenderer>();
+        Enemy = GameObject.FindGameObjectWithTag("Grunt");
     }
 
     // Update is called once per frame
@@ -117,7 +120,8 @@ public class Player : MonoBehaviour
         {
             sr.enabled = false;
             GameOver.SetActive(true);
-            //Enemy.SetActive(false);
+            vivo = false;
+            
         }
     }
 
@@ -133,7 +137,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire && vivo)
         {
             Instantiate(Bullet, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
             canFire = false;

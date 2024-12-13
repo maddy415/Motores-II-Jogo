@@ -18,6 +18,7 @@ public class ResetGame : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Score.scoreCount = 0;
+        Player.vivo = true;
     }
 
 }
