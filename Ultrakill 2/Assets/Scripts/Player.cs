@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject Bullet;
     public GameObject Enemy;
     public GameObject GameOver;
+    public GameObject Cenario;
    
     
     
@@ -50,7 +51,10 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Cenario.transform.Rotate(0, 0, 90);
+        }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
