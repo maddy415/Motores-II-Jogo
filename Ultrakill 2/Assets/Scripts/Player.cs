@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public GameObject Enemy;
     public GameObject GameOver;
     public GameObject Cenario;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
    
     
     
@@ -30,6 +32,14 @@ public class Player : MonoBehaviour
     public float fireTimer;
     public float fireCooldown;
     public static bool vivo = true;
+    private bool isWallsliding;
+    public float wallSlidingspeed = 2f;
+    private bool isWalljumping;
+    private float wallJumpdirection;
+    private float wallJumptime = 0.2f;
+    private float wallJumpingcounter;
+    private float wallJumpingduration = 0.4f;
+    private Vector2 wallJumpingforce = new Vector2(8f, 16f);
     
     
     void Start()
@@ -47,6 +57,8 @@ public class Player : MonoBehaviour
         Move();
         Jump();
         Shoot();
+        isWalled();
+        WallSlide();
     }
 
     void Move()
@@ -151,6 +163,58 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    private bool isWalled()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+
+    private void WallSlide()
+    {
+        if(isWalled() && isJumping)
+        {
+            isWallsliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingspeed, float.MaxValue));
+        }
+        else
+        {
+            isWallsliding = false;
+        }
+    }
+
+    private void WallJump()
+    {
+        if (isWallsliding)
+        {
+            isWalljumping = false;
+            wallJumpdirection = -transform.localScale.x;
+            wallJumpingcounter = wallJumptime;
+            
+            CancelInvoke(nameof(StopWallJumping));
+        }
+        else
+        {
+            wallJumpingcounter -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && wallJumpingcounter > 0f)
+        {
+            isWalljumping = true;
+            rb.velocity = new Vector2(wallJumpdirection * wallJumpingforce.x, wallJumpingforce.y);
+            wallJumpingcounter = 0f;
+        }
+
+        if (transform.localScale.x != wallJumpdirection)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        Invoke(nameof(StopWallJumping), wallJumpingduration);
+        
+    }
+
+    private void StopWallJumping()
+    {
+        isWalljumping = false;
+    }
     
 }
