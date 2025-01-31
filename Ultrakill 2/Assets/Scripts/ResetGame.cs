@@ -17,7 +17,7 @@ public class ResetGame : MonoBehaviour
     void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Score.scoreCount = 0;
+        //Score.scoreCount = 0;
         Player.vivo = true;
     }
 

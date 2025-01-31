@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 {
     private Camera mainCam;
     private Rigidbody2D rb;
-    
+             
     private Vector3 mousePos;
 
     public float bulletForce;
