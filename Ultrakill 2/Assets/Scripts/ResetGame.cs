@@ -14,7 +14,25 @@ public class ResetGame : MonoBehaviour
         restart.onClick.AddListener(ResetScene);
     }
 
-    void ResetScene()
+    public void LoadSceneOne()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadSceneTwo()
+    {
+        SceneManager.LoadScene(2);
+    }
+    
+    public void LoadSceneMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //Score.scoreCount = 0;

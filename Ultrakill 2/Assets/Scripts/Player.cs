@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject Bullet;
     public GameObject Enemy;
     public GameObject GameOver;
+    public GameObject Win;
     public GameObject Cenario;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
@@ -138,7 +139,12 @@ public class Player : MonoBehaviour
             sr.enabled = false;
             GameOver.SetActive(true);
             vivo = false;
-            
+        }
+        
+        if (collision.gameObject.tag == "Finish")
+        {
+            isJumping = false;
+            Win.SetActive(true);
         }
     }
 
