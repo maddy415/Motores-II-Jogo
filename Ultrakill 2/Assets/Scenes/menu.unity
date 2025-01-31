@@ -1186,7 +1186,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1981107751}
         m_TargetAssemblyTypeName: ResetGame, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
